@@ -20,29 +20,29 @@
 
 #### 水平居中
 
-行内元素，给其父元素设置text-align:center
-定宽块级元素，该元素设置margin:0 auto
-定宽块级元素，还可以用绝对定位设置和left:50%;加margin-left:-1/2宽度；
-不定宽块级元素，设置父元素为flex布局，子元素设置margin:0 auto即可
-不定宽块级元素，设置父元素为flex布局，且设置justify-content: center;
-不定宽块级元素，设置父元素为position: relative;子元素position: absulote;left: 50%;transform: translateX(-50%);
+- 行内元素，给其父元素设置text-align:center
+- 定宽块级元素，该元素设置margin:0 auto
+- 定宽块级元素，还可以用绝对定位设置和left:50%;加margin-left:-1/2宽度；
+- 不定宽块级元素，设置父元素为flex布局，子元素设置margin:0 auto即可
+- 不定宽块级元素，设置父元素为flex布局，且设置justify-content: center;
+- 不定宽块级元素，设置父元素为position: relative;子元素position: absulote;left: 50%;transform: translateX(-50%);
 
 #### 垂直居中
 
-若元素是单行文本, 则可设置line-height等于父元素高度
-定高块级元素，该元素设置margin:auto 0
-定高块级元素，可以用绝对定位+top:50%;+margin-top
-不定高块级元素，设置父元素为flex布局，子元素设置margin: auto 0即可
-不定高块级元素，设置父元素为flex布局，且设置align-items: center;
-不定高块级元素，可以用绝对定位和transform
-不定高块级元素，设置父元素为table布局，子元素display: table-cell;vertical-align:middle;
+- 若元素是单行文本, 则可设置line-height等于父元素高度
+- 定高块级元素，该元素设置margin:auto 0
+- 定高块级元素，可以用绝对定位+top:50%;+margin-top
+- 不定高块级元素，设置父元素为flex布局，子元素设置margin: auto 0即可
+- 不定高块级元素，设置父元素为flex布局，且设置align-items: center;
+- 不定高块级元素，可以用绝对定位和transform
+- 不定高块级元素，设置父元素为table布局，子元素display: table-cell;vertical-align:middle;
 
 #### 水平垂直居中
 
-子元素为块级元素，父元素flex布局，子元素设置margin:auto;
-子元素未知，父元素flex布局，设置justify-content: center;align-items: center;
-子元素用绝对定位，设置上下左右为0，margin:auto;父元素position: relative;
-子元素已知宽高，绝对定位 left: 50%;top: 50%;  再 margin 自己的负一半；或者 transform: translate(-50%,-50%);
+- 子元素为块级元素，父元素flex布局，子元素设置margin:auto;
+- 子元素未知，父元素flex布局，设置justify-content: center;align-items: center;
+- 子元素用绝对定位，设置上下左右为0，margin:auto;父元素position: relative;
+- 子元素已知宽高，绝对定位 left: 50%;top: 50%;  再 margin 自己的负一半；或者 transform: translate(-50%,-50%);
 
 ## 布局与响应式
 
