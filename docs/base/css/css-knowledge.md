@@ -20,32 +20,29 @@
 
 #### 水平居中
 
-- 内联元素：`text-align: center`
-- 块级元素：`margin: 0 auto`
-- 内联块实现：将行内多个元素设定为 inline-block 行内块，然后在父元素添加 text-align。
-- 弹性布局：`justify-content: center`。
-- 固定宽度-外边距偏移：先相对于父元素向右偏离半个父元素宽度，然后使用负左外边距(负 margin)校正居中元素的偏移量。
-- 固定宽度-外边距适配：(position: absolute; left: 0; right: 0; margin: 0 auto)
-- 未知宽度：当定位元素未知宽度时，使用 transform 对自身进行偏移可以解决这个问题(left + transform)
+行内元素，给其父元素设置text-align:center
+定宽块级元素，该元素设置margin:0 auto
+定宽块级元素，还可以用绝对定位设置和left:50%;加margin-left:-1/2宽度；
+不定宽块级元素，设置父元素为flex布局，子元素设置margin:0 auto即可
+不定宽块级元素，设置父元素为flex布局，且设置justify-content: center;
+不定宽块级元素，设置父元素为position: relative;子元素position: absulote;left: 50%;transform: translateX(-50%);
 
 #### 垂直居中
 
-- 单行内联元素：设置内联元素的高度 height 和行高 line-height 相等，从而使元素垂直居中。
-- 表格布局：使用表格布局的 vertical-align: middle 可以实现子元素的垂直居中。
-- 弹性布局：为父元素设置为 flex 弹性布局，并设置布局方向 flex-direction 为垂直，子元素适配 justify-content 为居中即可实现垂直居中
-- 精灵元素：利用精灵元素（Ghost Element）技术实现垂直居中，即在父容器内放一个 100% 高度的伪元素，让 文本 和 伪元素 垂直对齐，从而达到垂直居中的目的。
-- 固定高度-外边距偏移：当居中元素的 高度和宽度 已知时，垂直居中问题就很简单。通过 绝对定位 元素距离顶部 50%，并设置 margin-top 向上偏移元素高度的一半，就可以实现垂直居中了。
-- 固定高度-外边距适配
-- 未知高度：与 块级元素-有滚动条 实现效果类似，只是对定位元素自身的偏移使用 transform 实现(top + transform)
-- 图片垂直居中：`font-size: 0`。在 font-size 不为 0 时，图片设置垂直居中时的中线位置并不是它的父元素的绝对中线位置，它们会有一个和字符 x 高度相关的高度差。设置 font-size 为 0，会消除这个高度差，使图片的中线位置和父元素中线重合。
+若元素是单行文本, 则可设置line-height等于父元素高度
+定高块级元素，该元素设置margin:auto 0
+定高块级元素，可以用绝对定位+top:50%;+margin-top
+不定高块级元素，设置父元素为flex布局，子元素设置margin: auto 0即可
+不定高块级元素，设置父元素为flex布局，且设置align-items: center;
+不定高块级元素，可以用绝对定位和transform
+不定高块级元素，设置父元素为table布局，子元素display: table-cell;vertical-align:middle;
 
 #### 水平垂直居中
 
-- 文本元素：通过设置父元素容器 text-align 实现水平居中，设置一致的高度（height）和行高（line-height）实现对子元素的垂直居中，垂直居中元素设置 vertical-align 以及 line-height 为 initial 实现子元素内部的基准线垂直居中
-- 固定垂直居中元素的宽高：相对于父元素容器左边距和上边距坐标偏移 50%，通过计算垂直居中元素宽/高，利用负 margin 偏移自身宽/高的 50%。或者通过设置上下左右坐标为 0，外边距自适应 auto 实现垂直居中。两种处理手法都需要设置垂直居中元素为标准盒模型。
-- 不确定垂直居中元素的宽高：相对于父元素容器左边距和上边距坐标偏移 50%，使用 transform + translate 将垂直居中元素自身偏移负 50%，使用标准盒模型
-- 弹性布局：父元素设置为弹性布局容器，并将 justify-content 和 align-items 设置为 center 居中
-- 网格布局：父元素设置为网格布局容器，垂直居中元素设置外边距 margin 为自适应 auto 即可
+子元素为块级元素，父元素flex布局，子元素设置margin:auto;
+子元素未知，父元素flex布局，设置justify-content: center;align-items: center;
+子元素用绝对定位，设置上下左右为0，margin:auto;父元素position: relative;
+子元素已知宽高，绝对定位 left: 50%;top: 50%;  再 margin 自己的负一半；或者 transform: translate(-50%,-50%);
 
 ## 布局与响应式
 
